@@ -257,10 +257,11 @@ footer p{
         position: static;
     }
     .gallery{
+        width: 100%;
         flex-wrap: wrap;
     }
     .card{
-        min-width: 150px;
+        min-width: 180px;
     }
     .buttonGroup{
         flex-direction: column;
