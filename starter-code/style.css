@@ -1,0 +1,266 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --grayColor: #87879D;
+    --primaryColor: #4D96A9;
+    --secondaryColor: #855FB1;
+    --primaryColorHover:#8FE3F9;
+    --secondaryColorHover:#D9B8FF;
+}
+
+body{
+    font-family: "Red Hat Display", sans-serif;
+}
+#logo{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   margin: 80px 0;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 1.3fr 1fr;
+    gap: 0.5em;
+    overflow: hidden;
+    margin-bottom: 8em;
+    grid-template-areas: 
+        "leftImg groupChat rightImg";
+}
+#leftImg{
+    position: relative;
+    left: -2em;
+    grid-area:  leftImg;
+}
+#leftImg img{
+ width: 90%;
+}
+#rightImg{
+    position: relative;
+    left: 4em;
+    grid-area:  rightImg;
+}
+#rightImg img{
+    width: 90%;
+   }
+#groupChat{
+    text-align: center;
+    grid-area: groupChat;
+    max-width: 500px;
+    justify-self: center;
+}
+.buttonGroup{
+    display: flex;
+    justify-content: center;
+}
+#groupChat h1{
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: #28283D;
+    margin-bottom: 0.4em;
+}
+p{
+    color: var(--grayColor);
+    font-weight: 600;
+    margin-bottom: 1.3em;
+    line-height: 25px;
+}
+button{
+    border: none;
+    padding: 1.3em 3em;
+    border-radius: 45px;
+    color: white;
+    font-weight: 800;
+    font-size: 0.8rem;
+}
+#downloadBtn{
+    background-color: var(--primaryColor);
+    margin-right: 0.9em;
+}
+#downloadBtn:hover{
+    background-color: var(--primaryColorHover);
+    cursor: pointer;
+}
+#whatIsItBtn{
+    background-color: var(--secondaryColor);
+}
+#whatIsItBtn:hover{
+    background-color: var(--secondaryColorHover);
+    cursor: pointer;
+}
+.numberComponent{
+    position: relative;
+    width: 100px;
+    height: 180px;
+    margin: 0 auto;
+}
+.sectionLine{
+    width: 1px;
+    height: 100px;
+    background-color: #D8D8D8;
+    position: relative;
+    left: 50px;
+}
+
+.sectionNumber{
+    position: relative;
+    left: 25px;
+    color: var(--grayColor);
+    width: 50px;
+    height: 50px;
+    border: 1px solid #D8D8D8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: white;
+}
+.gallery{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    gap: 1.6em;
+    margin: 2em auto;
+}
+.card{
+    border-radius: 15px;
+    overflow: hidden; 
+    width: 20%;
+}
+.card img{
+    width: 100%;
+}
+
+.section2{
+    text-align: center;
+    width: 38%;
+    margin: 5em auto;
+}
+.section2 h4{
+    color: var(--primaryColor);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 0.9em;
+}
+.section2 h1{
+    font-size: 2.7rem;
+    margin-bottom: 0.5em;
+}
+
+footer{
+    background-color: var(--primaryColor);
+    background-image: url(./assets/desktop/image-footer.jpg);
+    background-size: cover;
+    height: 300px;
+    color: white;
+    position: relative;
+    margin-top: -3.5em;
+}
+.footer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primaryColor);
+    opacity: 0.9;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerElt{
+    display: flex;
+    gap: 2.5em;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+}
+footer h1{
+    font-weight: 800;
+    font-size: 2.5rem;
+    width: 35%;
+}
+footer p{
+    width: 30%;
+    color: white;
+}
+
+#footerBtn{
+    background-color: var(--secondaryColor);
+    padding: 1.4em 2.1em;
+    width: 200px;
+}
+#footerBtn:hover{
+    background-color: var(--secondaryColorHover);
+    cursor: pointer;
+}
+
+@media(max-width:910px) and (min-width:400px){
+    main{
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto ;
+        grid-template-areas: 
+            "leftImg rightImg"
+            "groupChat groupChat";
+        column-gap: 0;
+        row-gap: 1.5em;
+    }
+    #leftImg{
+        position: static;
+    }
+    #rightImg{
+        position: static;
+    }
+    .gallery{
+       width: 100%;
+    }
+    .section2{
+        width: 80%;
+    }
+    footer{
+        height: 400px;
+    }
+    .footerElt{
+        margin-top: 3em;
+        flex-direction: column;
+        width: 100%;
+        gap: 1em;
+    }
+    footer h1{
+        width: 70%;
+        text-align: center;
+    }
+    footer p{
+        width: 80%;
+        text-align: center;
+    }
+    
+}
+@media(max-width:500px){
+    .gallery{
+        flex-wrap: wrap;
+    }
+    .card{
+        min-width: 200px;
+    }
+    .buttonGroup{
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+    }
+    #downloadBtn{
+        width: 50%
+    }
+    #whatIsItBtn{
+        width: 40%;
+    }
+    footer h1{
+        width: 90%;
+    }
+    footer p{
+        width: 90%;
+    }
+}
